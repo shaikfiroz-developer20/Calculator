@@ -187,4 +187,6 @@ font-size: 60px;}
 
 #reverseInput{
    cursor: not-allowed;
+    pointer-events: none;
+
 }
