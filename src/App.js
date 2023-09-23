@@ -130,6 +130,7 @@ function CalcResult(props) {
           className='textinput'
           value={props.value}
           onChange={(e) => props.onChange(e.target.value)}
+          inputMode="none"
           ref={inputRef}
         />
       </div>
