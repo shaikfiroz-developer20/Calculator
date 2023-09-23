@@ -131,7 +131,7 @@ function CalcResult(props) {
           value={props.value}
           onChange={(e) => props.onChange(e.target.value)}
           inputMode="none"
-readOnly
+readonly
           ref={inputRef}
         />
       </div>
