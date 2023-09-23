@@ -1,0 +1,13 @@
+body{
+    background-image: url("https://alienworlds-media-bucket.s3.eu-central-1.amazonaws.com/xlarge_space_a41419db27.webp");
+
+
+
+}
+
+#root{
+    background-color: aqua;
+   width: fit-content;
+    margin: auto;
+    margin-top: 10vh;
+}
