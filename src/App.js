@@ -11,25 +11,21 @@ function App() {
 
 function Calculator() {
   const [inputValue, setInputValue] = useState('');
-  const [counter, setCounter] = useState(0);
-  const [isCalculatorOn, setIsCalculatorOn] = useState(false); // Add isCalculatorOn state
+  const [isCalculatorOn, setIsCalculatorOn] = useState(false);
 
   useEffect(() => {
-    // Parse inputValue to an integer and update counter
-    setCounter(parseInt(inputValue, 10));
-  }, [inputValue]); 
+    // Parse inputValue to an integer and update the displayed value
+    // when inputValue changes
+    setDisplayValue(parseInt(inputValue, 10).toString());
+  }, [inputValue]);
 
-  const handleInputChange = (value) => {
-    if (isCalculatorOn) { // Check if the calculator is on before accepting input
-      setInputValue(value);
-    }
-  };
+  // A separate state to manage the displayed value
+  const [displayValue, setDisplayValue] = useState('');
 
   const handleButtonClick = (buttonText) => {
     if (isCalculatorOn) {
       if (buttonText === "++") {
-        setCounter(counter + 1);
-        setInputValue(counter + 1);
+        setInputValue((prevValue) => (parseInt(prevValue, 10) + 1).toString());
       } else if (buttonText === '=') {
         evaluateExpression();
       } else {
@@ -47,27 +43,24 @@ function Calculator() {
     }
   };
 
-  // Function to toggle the calculator on/off
   const toggleCalculator = () => {
     setIsCalculatorOn(!isCalculatorOn);
-    setInputValue(''); // Clear the input when turning off
+    setInputValue('');
   };
 
   return (
     <div className='calculator'>
-      <CalcResult value={inputValue} onChange={handleInputChange} />
+      <CalcResult value={displayValue} />
       <div>
         <div className='lineoneout'>
           <div className='in2buttons'>
             <ButtonType1 name='CHECK' onClick={evaluateExpression} />
-            <ButtonType1 name='DELETE' onClick={() => handleInputChange('')} />
+            <ButtonType1 name='DELETE' onClick={() => setInputValue('')} />
           </div>
           <div className='onac'>
-          <ButtonType6  value=')' onClick={() => handleButtonClick(')')} />
-
+            <ButtonType6  value=')' onClick={() => handleButtonClick(')')} />
             <button className='onof' onClick={toggleCalculator}>
-              {isCalculatorOn ? 'OFF' : 'ON'} {/* Toggle text based on isCalculatorOn */}
-
+              {isCalculatorOn ? 'OFF' : 'ON'}
             </button>
           </div>
         </div>
@@ -98,7 +91,7 @@ function Calculator() {
               <ButtonType2 value='0' onClick={() => handleButtonClick('0')} />
               <ButtonType2 value='00' onClick={() => handleButtonClick('00')} />
               <ButtonType4 value='-' onClick={() => handleButtonClick('-')} />
-              <ButtonType2 value='cls' onClick={() => handleInputChange('')} />
+              <ButtonType2 value='cls' onClick={() => setInputValue('')} />
               <ButtonType2 value='.' onClick={() => handleButtonClick('.')} />
               <ButtonType5 value='+' onClick={() => handleButtonClick('+')} />
               <ButtonType4 value='=' onClick={evaluateExpression} />
@@ -110,30 +103,15 @@ function Calculator() {
   );
 }
 
-function CalcResult(props) {
-  const inputRef = useRef(null);
-
-  useEffect(() => {
-    inputRef.current.focus();
-    inputRef.current.setSelectionRange(props.value.length, props.value.length);
-  }, [props.value]);
-
+function CalcResult({ value }) {
+  // Display the value using a div instead of an input
   return (
     <div className='out1'>
       <div className='upone'>
         <b>Calsi</b>  
       </div>
       <div className='downone'>
-        <input
-          type='text'
-          id='reverseInput'
-          className='textinput'
-         disabled
-          value={props.value}
-          onChange={(e) => props.onChange(e.target.value)}
-readonly
-          ref={inputRef}
-        />
+        <div id='reverseInput' className='textinput'>{value}</div>
       </div>
     </div>
   );
@@ -159,9 +137,8 @@ function ButtonType5(props) {
   return <button className='Buttontype5' onClick={() => props.onClick(props.value)}>{props.value}</button>;
 }
 
-
-
-function ButtonType6(props){
-  return (<button className='ButtonType6' onClick={() => props.onClick(props.value)}>{props.value}</button>)
+function ButtonType6(props) {
+  return (<button className='ButtonType6' onClick={() => props.onClick(props.value)}>{props.value}</button>);
 }
+
 export default App;
