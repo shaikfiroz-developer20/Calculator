@@ -163,6 +163,13 @@ gap: 2px;
   align-items: baseline;
 }
 
+
+.downone input{
+    cursor: not-allowed; /* Change the cursor to "not allowed" */
+
+}
+
+
 .textinput{
 height: 70%;
 border: none;
