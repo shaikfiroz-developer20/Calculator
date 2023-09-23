@@ -164,11 +164,6 @@ gap: 2px;
 }
 
 
-.downone input{
-    cursor: not-allowed; /* Change the cursor to "not allowed" */
-
-}
-
 
 .textinput{
 height: 70%;
@@ -188,4 +183,8 @@ font-size: 60px;}
   font-weight: 900;
   width: 70px;
   padding: 5px;
+}
+
+.reverseInput{
+   cursor: not-allowed;
 }
