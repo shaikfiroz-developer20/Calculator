@@ -185,6 +185,6 @@ font-size: 60px;}
   padding: 5px;
 }
 
-.reverseInput{
+#reverseInput{
    cursor: not-allowed;
 }
