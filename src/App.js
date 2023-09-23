@@ -104,17 +104,32 @@ function Calculator() {
 }
 
 function CalcResult({ value }) {
-  // Display the value using a div instead of an input
+  function CalcResult(props) {
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+    inputRef.current.setSelectionRange(props.value.length, props.value.length);
+  }, [props.value]);
+
   return (
     <div className='out1'>
       <div className='upone'>
         <b>Calsi</b>  
       </div>
       <div className='downone'>
-        <div id='reverseInput' className='textinput'>{value}</div>
+        <input
+          type='text'
+          id='reverseInput'
+          className='textinput'
+          value={props.value}
+          onChange={(e) => props.onChange(e.target.value)}
+readonly
+          ref={inputRef}
+        />
       </div>
     </div>
-  );
+  
 }
 
 function ButtonType1(props) {
