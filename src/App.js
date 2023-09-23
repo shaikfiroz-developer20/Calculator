@@ -128,6 +128,7 @@ function CalcResult(props) {
           type='text'
           id='reverseInput'
           className='textinput'
+         disabled
           value={props.value}
           onChange={(e) => props.onChange(e.target.value)}
 readonly
