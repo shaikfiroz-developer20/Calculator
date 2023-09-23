@@ -1,92 +1,89 @@
-.calculator{
+.calculator {
   background-color: rgb(63, 66, 73);
   padding: 5px;
   width: 360px;
   height: fit-content;
- font-weight: 900;}
+  font-weight: 900;
+}
 
-.out1{
+.out1 {
   background-color: darkseagreen;
   height: 15vh;
-width: 360px;
-
+  width: 360px;
 }
-.in2buttons{
+
+.in2buttons {
   display: flex;
   gap: 10px;
   width: 50%;
 }
 
-.lineoneout{
-display: flex;
-
+.lineoneout {
+  display: flex;
 }
 
-.onac{
+.onac {
   display: flex;
   width: 50%;
-gap: 70px;  justify-content: flex-end;
+  gap: 70px;
+  justify-content: flex-end;
   align-items: flex-end;
 }
 
-.buttontype1{
-
+.buttontype1 {
   background-color: rgb(51, 120, 158);
   font-family: 'Times New Roman', Times, serif;
   color: white;
   font-size: large;
   font-weight: 900;
   padding: 5px;
-border: 0.5px solid silver;
-
+  border: 0.5px solid silver;
 }
 
-.onof{
+.onof {
   background-color: rgb(22, 141, 89);
   font-family: 'Times New Roman', Times, serif;
   color: white;
   font-size: large;
   font-weight: 900;
   padding: 5px;
-
 }
 
-.cutout3{
+.cutout3 {
   display: flex;
-gap: 2px;
+  gap: 2px;
 }
 
-.vertical1{
-  height:fit-content;
+.vertical1 {
+  height: fit-content;
   display: flex;
   flex-direction: column;
   padding: 2.5px;
 }
 
-
 .numsandoperations {
   display: grid;
   width: 100%;
-  height: fit-content; /* Set to auto to allow rows to adjust their height based on content */
-  grid-template-columns: repeat(auto-fit,minmax(70px,1fr));
+  height: fit-content;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
   grid-auto-rows: auto;
-/* Adjust the gap between buttons as needed */
+  gap: 5px;
 }
 
-.Buttontype2{
- background-color: rgb(37, 37, 37);
+.Buttontype2 {
+  background-color: rgb(37, 37, 37);
   font-family: 'Times New Roman', Times, serif;
   color: white;
   font-size: large;
   font-weight: 900;
   font-size: 30px;
-
   width: fit-content;
   height: 70px;
   width: 70px;
+  cursor: pointer;
 }
 
-.Buttontype4{
+.Buttontype4 {
   background-color: rgb(37, 37, 37);
   font-family: 'Times New Roman', Times, serif;
   color: white;
@@ -96,11 +93,11 @@ gap: 2px;
   height: 70px;
   width: 70px;
   font-size: 30px;
-
   grid-column-start: 4;
+  cursor: pointer;
 }
 
-.Buttontype5{
+.Buttontype5 {
   background-color: rgb(37, 37, 37);
   font-family: 'Times New Roman', Times, serif;
   color: white;
@@ -112,70 +109,63 @@ gap: 2px;
   grid-row-start: 1;
   grid-column-start: 3;
   font-size: 30px;
-
   grid-row: span 2;
   grid-row-end: 2;
+  cursor: pointer;
 }
 
-
-.Buttontype3{
+.Buttontype3 {
   height: 70px;
   width: 70px;
   background-color: rgb(216, 216, 216);
   color: black;
   font-size: 30px;
-
   font-weight: 900;
-
+  cursor: pointer;
 }
 
-
-.zeoplusminusequal{
+.zeoplusminusequal {
   display: grid;
   width: 100%;
-  height: fit-content; /* Set to auto to allow rows to adjust their height based on content */
+  height: fit-content;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-auto-rows: auto;
   font-weight: 900;
-
+  gap: 5px;
 }
 
-
-.minus{
+.minus {
   grid-column-start: 4;
 }
 
-
-.numsandoperationsout{
+.numsandoperationsout {
   width: 100%;
   height: fit-content;
 }
 
-.out1{
+.out1 {
   display: grid;
   grid-template-rows: 1fr 2fr;
 }
 
-.downone{
+.downone {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: baseline;
 }
 
-
-
-.textinput{
-height: 70%;
-border: none;
-outline-width: 0;
-width: 354px;
-cursor: pointer;
-
+.textinput {
+  height: 70%;
+  border: none;
+  outline-width: 0;
+  width: 354px;
+  cursor: pointer;
   background-color: darkseagreen;
-font-size: 60px;}
+  font-size: 60px;
+}
 
-.ButtonType6{
+.ButtonType6 {
   background-color: rgb(37, 37, 37);
   font-family: 'Times New Roman', Times, serif;
   color: white;
@@ -183,10 +173,11 @@ font-size: 60px;}
   font-weight: 900;
   width: 70px;
   padding: 5px;
+  cursor: pointer;
 }
 
-#reverseInput{
-   cursor: not-allowed;
-    pointer-events: none;
-
+#reverseInput {
+  cursor: not-allowed;
+  pointer-events: none;
 }
+
