@@ -118,8 +118,15 @@ function CalcResult({ value }) {
         <b>Calsi</b>  
       </div>
       <div className='downone'>
-                <div id='reverseInput' className='textinput'>{value}</div>
-
+<input
+          type='text'
+          id='reverseInput'
+          className='textinput'
+          value={props.value}
+          onChange={(e) => props.onChange(e.target.value)}
+readonly
+          ref={inputRef}
+        />
       </div>
     </div>
   
